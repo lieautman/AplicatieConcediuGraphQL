@@ -15,7 +15,7 @@ const profilePageDefs = gql`
     Poza: String
     Functia: String
     ManagerId: Int
-    Salariu: Float!
+    Salariu: Float
     EsteAngajatCuActeInRegula: Boolean
     IdEchipa: Int
   }

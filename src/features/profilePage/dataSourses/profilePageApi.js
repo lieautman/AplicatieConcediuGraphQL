@@ -15,7 +15,7 @@ class ProfilePageApi extends ApiRESTDataSource {
       functie = 'Administrator'
     }
     let userData = {
-      Id: 2,
+      Id: userData1.id,
       Nume: userData1.nume,
       Prenume: userData1.prenume,
       Email: userData1.email,
