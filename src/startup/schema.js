@@ -9,6 +9,8 @@ const userResolvers = require('../features/user/resolvers')
 const profilePageResolvers = require('../features/profilePage/resolvers')
 const userDefs = require('../features/user/schema')
 const profilePageDefs = require('../features/profilePage/schema')
+const concediiResolvers = require('../features/concedii/resolvers')
+const concediiDefs = require('../features/concedii/schema')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
