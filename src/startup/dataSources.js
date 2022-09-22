@@ -7,7 +7,8 @@ module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
   userApi: new UserApi(),
   userDb: new UserDb(),
-  profilePageApi: new ProfilePageApi()
+  profilePageApi: new ProfilePageApi(),
+  concediiApi: new ConcediiApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -15,5 +16,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.userApi.initialize({ context })
   dataSources.userDb.initialize({ context: { dbInstance } })
   dataSources.ProfilePageApi.initialize({ context })
+  dataSources.ConcediiApi.initialize({ context })
   return dataSources
 }
