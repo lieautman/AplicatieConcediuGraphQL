@@ -6,7 +6,7 @@ class ProfilePageApi extends ApiRESTDataSource {
   }
 
   async preluareDateProfil(userEmail) {
-    const userData1 = await this.get('/Angajat/GetDateAngajat/admin')
+    const userData1 = await this.get('/Angajat/GetDateAngajat/' + userEmail)
     let functie = 'Angajat'
     if (userData1.managerId === null) {
       functie = 'Manager'

@@ -4,6 +4,8 @@ const userDefs = gql`
   type UserInfo {
     id: Int!
     isAdmin: Boolean
+    isManager: Boolean
+    email: String
   }
 
   extend type Query {
