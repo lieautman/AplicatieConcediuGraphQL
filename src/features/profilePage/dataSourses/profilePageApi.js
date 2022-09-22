@@ -6,27 +6,32 @@ class ProfilePageApi extends ApiRESTDataSource {
   }
 
   async preluareDateProfil(userEmail) {
-    const userData = {
-      Id: 2,
-      Nume: 'Adilescu',
-      Prenume: 'Adi',
-      Email: userEmail,
-      Parola: '1234',
-      DataAngajarii: '2011-01-22',
-      DataNasterii: '2001-01-12',
-      Cnp: '9876543210123',
-      SeriaNumarBuletin: 'rk321321',
-      Numartelefon: '123457890',
-      Poza: '',
-      Functia: 'Administrator Aplicatie Concedii',
-      ManagerId: null,
-      Salariu: 500.0,
-      EsteAngajatCuActeInRegula: true,
-      IdEchipa: 2
+    const userData1 = await this.get('/Angajat/GetDateAngajat/admin')
+    let functie = 'Angajat'
+    if (userData1.managerId === null) {
+      functie = 'Manager'
     }
-    console.log(userData)
-    const userData1 = await this.get('http://localhost:5107/Angajat/GetDateAngajat/12345')
-    console.log(userData1)
+    if (userData1.esteAdmin === true) {
+      functie = 'Administrator'
+    }
+    let userData = {
+      Id: 2,
+      Nume: userData1.nume,
+      Prenume: userData1.prenume,
+      Email: userData1.email,
+      Parola: userData1.parola,
+      DataAngajarii: userData1.dataAngajarii,
+      DataNasterii: userData1.dataNasterii,
+      Cnp: userData1.cnp,
+      SeriaNumarBuletin: userData1.seriaNumarBuletin,
+      Numartelefon: userData1.numartelefon,
+      Poza: '',
+      Functia: functie,
+      ManagerId: userData1.managerId,
+      Salariu: userData1.salariu,
+      EsteAngajatCuActeInRegula: userData1.esteAngajatCuActeInRegula,
+      IdEchipa: userData1.idEchipa
+    }
     return userData
   }
 }
