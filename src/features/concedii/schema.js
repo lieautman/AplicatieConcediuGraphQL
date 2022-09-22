@@ -4,8 +4,8 @@ const concediiDefs = gql`
   type Concedii {
     id: Int!
     tipConcediu: String
-    dataInceput: Date
-    dataSfarsit: Date
+    dataInceput: String
+    dataSfarsit: String
     inlocuitor: String
     motiv: String
     angajat: String
