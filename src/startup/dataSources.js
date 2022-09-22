@@ -1,5 +1,6 @@
 const UserApi = require('../features/user/dataSources/userApi')
 const ConcediiApi = require('../features/concedii/dataSources/concediiApi')
+const ConcediiSpreAprobareApi = require('../features/concediiSpreAprobare/dataSources/concediiSpreAprobareApi')
 const UserDb = require('../features/user/dataSources/userDb')
 const ProfilePageApi = require('../features/profilePage/dataSourses/profilePageApi')
 
@@ -8,7 +9,8 @@ module.exports.getDataSources = () => ({
   userApi: new UserApi(),
   userDb: new UserDb(),
   profilePageApi: new ProfilePageApi(),
-  concediiApi: new ConcediiApi()
+  concediiApi: new ConcediiApi(),
+  concediiSpreAprobareApi: new ConcediiSpreAprobareApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -17,5 +19,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.userDb.initialize({ context: { dbInstance } })
   dataSources.ProfilePageApi.initialize({ context })
   dataSources.ConcediiApi.initialize({ context })
+  dataSources.ConcediiSpreAprobareApi.initialize({ context })
   return dataSources
 }

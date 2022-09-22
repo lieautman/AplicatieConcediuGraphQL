@@ -7,6 +7,7 @@ class ConcediiApi extends ApiRESTDataSource {
 
   async concediiData() {
     const concediiData = await this.get('http://localhost:5107/Concediu/GetAllConcedii')
+    console.log(concediiData)
     return concediiData
   }
 }

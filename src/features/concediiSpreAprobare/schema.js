@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-koa')
 
-const concediiDefs = gql`
-  type Concedii {
+const concediiSpreAprobareDefs = gql`
+  type ConcediiSpreAprobare {
     id: Int
     name: String
     dataInceput: String
@@ -12,8 +12,8 @@ const concediiDefs = gql`
   }
 
   extend type Query {
-    concediiData: [Concedii]!
+    concediiSpreAprobareData: [ConcediiSpreAprobare]!
   }
 `
 
-module.exports = concediiDefs
+module.exports = concediiSpreAprobareDefs
