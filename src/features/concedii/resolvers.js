@@ -4,7 +4,13 @@ const concediiResolvers = {
   Query: {
     concediiData: async (_, __, { dataSources }, _info) => {
       const data = await dataSources.concediiApi.concediiData()
-      return data
+      const x = data.map(el => ({
+        ...el,
+        name: el.tipConcediu.nume,
+        inlocuitor: el.inlocuitor.nume,
+        angajat: el.angajat.nume
+      }))
+      return x
     }
   }
 }
