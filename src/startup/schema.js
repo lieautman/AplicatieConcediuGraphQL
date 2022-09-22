@@ -7,6 +7,8 @@ const { join } = require('path')
 
 const userResolvers = require('../features/user/resolvers')
 const userDefs = require('../features/user/schema')
+const concediiResolvers = require('../features/concedii/resolvers')
+const concediiDefs = require('../features/concedii/schema')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
