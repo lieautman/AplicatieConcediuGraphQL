@@ -10,6 +10,7 @@ const profilePageResolvers = require('../features/profilePage/resolvers')
 const userDefs = require('../features/user/schema')
 const profilePageDefs = require('../features/profilePage/schema')
 const concediiResolvers = require('../features/concedii/resolvers')
+const angajatiResolvers = require('../features/angajati/resolvers')
 const concediiSpreAprobareResolvers = require('../features/concediiSpreAprobare/resolvers')
 const concediiSpreAprobareDefs = require('../features/concediiSpreAprobare/schema')
 const concediiDefs = require('../features/concedii/schema')
@@ -26,7 +27,8 @@ const resolvers = merge(
   profilePageResolvers,
   concediiResolvers,
   concediiSpreAprobareResolvers,
-  concediuAprobatResolvers
+  concediuAprobatResolvers,
+  angajatiResolvers
 )
 
 const typeDefs = [
@@ -36,7 +38,8 @@ const typeDefs = [
   profilePageDefs,
   concediiDefs,
   concediiSpreAprobareDefs,
-  concediuAprobatDefs
+  concediuAprobatDefs,
+  angajatiResolvers
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
