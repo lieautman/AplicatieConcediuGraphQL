@@ -15,6 +15,8 @@ const concediiSpreAprobareDefs = require('../features/concediiSpreAprobare/schem
 const concediiDefs = require('../features/concedii/schema')
 const concediuAprobatDefs = require('../features/aprobaConcedii/schema')
 const concediuAprobatResolvers = require('../features/aprobaConcedii/resolvers')
+const concediuRespinsDefs = require('../features/respingeConcedii/schema')
+const concediuRespinsResolvers = require('../features/respingeConcedii/resolvers')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
@@ -26,7 +28,8 @@ const resolvers = merge(
   profilePageResolvers,
   concediiResolvers,
   concediiSpreAprobareResolvers,
-  concediuAprobatResolvers
+  concediuAprobatResolvers,
+  concediuRespinsResolvers
 )
 
 const typeDefs = [
@@ -36,7 +39,8 @@ const typeDefs = [
   profilePageDefs,
   concediiDefs,
   concediiSpreAprobareDefs,
-  concediuAprobatDefs
+  concediuAprobatDefs,
+  concediuRespinsDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
