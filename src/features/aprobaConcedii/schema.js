@@ -8,12 +8,12 @@ const concediuAprobatDefs = gql`
     dataSfarsit: String
     inlocuitor: String
     comentarii: String
-    stareConcediu: 1
+    stareConcediu: Int
     angajat: String
   }
 
   extend type Mutation {
-    updateConcediu(id: int! ): ConcediuAprobat
+    updateConcediu(id: int!): ConcediuAprobat
   }
 `
 
