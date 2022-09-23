@@ -13,7 +13,7 @@ const concediuAprobatDefs = gql`
   }
 
   extend type Mutation {
-    updateConcediu(id: int!): ConcediuAprobat
+    updateConcediu(id: Int!): ConcediuAprobat
   }
 `
 
