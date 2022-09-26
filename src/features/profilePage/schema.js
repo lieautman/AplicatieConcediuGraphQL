@@ -23,6 +23,21 @@ const profilePageDefs = gql`
   extend type Query {
     getProfileData(userEmail: String!): ProfileInfo!
   }
+
+  extend type Mutation {
+    modificareDateProfil(
+      userId: Int!
+      userNumeUpdated: String
+      userPrenumeUpdated: String
+      userEmailUpdated: String
+      userDataAngajariiUpdated: String
+      userNumartelefonUpdated: String
+      userDataNasteriiUpdated: String
+      userCnpUpdated: String
+      seriaNumarBuletinUpdated: String
+      salariuUpdated: Float
+    ): Boolean!
+  }
 `
 
 module.exports = profilePageDefs
