@@ -1,3 +1,4 @@
+const { lte } = require('ramda')
 const ApiRESTDataSource = require('../../../utils/apiRESTDataSource')
 
 class ProfilePageApi extends ApiRESTDataSource {
@@ -33,6 +34,38 @@ class ProfilePageApi extends ApiRESTDataSource {
       IdEchipa: userData1.idEchipa
     }
     return userData
+  }
+  async modificareDateProfil(
+    userId,
+    userNumeUpdated,
+    userPrenumeUpdated,
+    userEmailUpdated,
+    userDataAngajariiUpdated,
+    userNumartelefonUpdated,
+    userDataNasteriiUpdated,
+    userCnpUpdated,
+    seriaNumarBuletinUpdated,
+    salariuUpdated
+  ) {
+    try {
+      let Angajat = {
+        id: userId,
+        nume: userNumeUpdated,
+        prenume: userPrenumeUpdated,
+        email: userEmailUpdated,
+        dataAngajarii: userDataAngajariiUpdated,
+        numartelefon: userNumartelefonUpdated,
+        dataNasterii: userDataNasteriiUpdated,
+        cnp: userCnpUpdated,
+        seriaNumarBuletin: seriaNumarBuletinUpdated,
+        salariu: salariuUpdated,
+        parola: 'Ceva123$' //pt a putea rula (nu se va modifica)
+      }
+      await this.post('/Angajat/PostEditareDateAngajat', Angajat)
+      return true
+    } catch (Errr) {
+      return false
+    }
   }
 }
 
