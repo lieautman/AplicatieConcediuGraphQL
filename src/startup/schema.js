@@ -6,8 +6,10 @@ const { GraphQLFileLoader } = require('@graphql-tools/graphql-file-loader')
 const { join } = require('path')
 
 const userResolvers = require('../features/user/resolvers')
+const userRegisterResolvers = require('../features/userRegister/resolvers')
 const profilePageResolvers = require('../features/profilePage/resolvers')
 const userDefs = require('../features/user/schema')
+const userRegisterDefs = require('../features/userRegister/schema')
 const profilePageDefs = require('../features/profilePage/schema')
 const concediiResolvers = require('../features/concedii/resolvers')
 const angajatiResolvers = require('../features/angajati/resolvers')
@@ -29,7 +31,7 @@ const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
 
 const resolvers = merge(
   userResolvers,
-
+  userRegisterResolvers,
   profilePageResolvers,
 
   concediiResolvers,
@@ -45,6 +47,7 @@ const typeDefs = [
   ...sources.map(source => source.document),
   ...oldTypeDefs,
   userDefs,
+  userRegisterDefs,
   profilePageDefs,
   concediiDefs,
   concediiSpreAprobareDefs,
