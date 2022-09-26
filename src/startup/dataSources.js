@@ -4,6 +4,7 @@ const ConcediiApi = require('../features/concedii/dataSources/concediiApi')
 const ConcediiSpreAprobareApi = require('../features/concediiSpreAprobare/dataSources/concediiSpreAprobareApi')
 const UserDb = require('../features/user/dataSources/userDb')
 const ProfilePageApi = require('../features/profilePage/dataSourses/profilePageApi')
+const ProfilePageTableApi = require('../features/profilePageTable/dataSources/profilePageTableApi')
 const ConcediuAprobatApi = require('../features/aprobaConcedii/dataSources/aprobaConcediiApi')
 const AngajatiApi = require('../features/angajati/dataSources/angajatiApi')
 const adaugaAngajatApi = require('../features/AdaugaAngajat/dataSources/adaugaAngajatApi')
@@ -16,6 +17,7 @@ module.exports.getDataSources = () => ({
   userDb: new UserDb(),
   userRegisterApi: new UserRegisterApi(),
   profilePageApi: new ProfilePageApi(),
+  profilePageTableApi: new ProfilePageTableApi(),
   concediiApi: new ConcediiApi(),
   concediiSpreAprobareApi: new ConcediiSpreAprobareApi(),
   concediuAprobatApi: new ConcediuAprobatApi(),

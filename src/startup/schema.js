@@ -8,9 +8,11 @@ const { join } = require('path')
 const userResolvers = require('../features/user/resolvers')
 const userRegisterResolvers = require('../features/userRegister/resolvers')
 const profilePageResolvers = require('../features/profilePage/resolvers')
+const profilePageTableResolvers = require('../features/profilePageTable/resolvers')
 const userDefs = require('../features/user/schema')
 const userRegisterDefs = require('../features/userRegister/schema')
 const profilePageDefs = require('../features/profilePage/schema')
+const profilePageTableDefs = require('../features/profilePageTable/schema')
 const concediiResolvers = require('../features/concedii/resolvers')
 const angajatiResolvers = require('../features/angajati/resolvers')
 const angajatiDefs = require('../features/angajati/schema')
@@ -35,6 +37,7 @@ const resolvers = merge(
   userResolvers,
   userRegisterResolvers,
   profilePageResolvers,
+  profilePageTableResolvers,
 
   concediiResolvers,
 
@@ -52,6 +55,7 @@ const typeDefs = [
   userDefs,
   userRegisterDefs,
   profilePageDefs,
+  profilePageTableDefs,
   concediiDefs,
   concediiSpreAprobareDefs,
   concediuAprobatDefs,
