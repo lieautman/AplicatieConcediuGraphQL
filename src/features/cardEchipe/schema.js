@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-koa')
 
 const cardDefs = gql`
-  type Angajat {
+  type AngajatCard {
     id: Int
     nume: String
     prenume: String
@@ -10,7 +10,7 @@ const cardDefs = gql`
   }
 
   extend type Query {
-    cardData(echipa: String): [Angajat]
+    cardData(echipa: String): [AngajatCard]
   }
 `
 module.exports = cardDefs

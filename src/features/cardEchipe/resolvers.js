@@ -4,7 +4,7 @@ const cardResolvers = {
       const data = await dataSources.cardApi.cardData(echipa)
       const x = data.map(el => ({
         ...el,
-        echipa: el.echipa.nume
+        echipa: el.idEchipaNavigation.nume
       }))
       return x
     }
