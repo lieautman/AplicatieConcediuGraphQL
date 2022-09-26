@@ -61,8 +61,12 @@ class ProfilePageApi extends ApiRESTDataSource {
         salariu: salariuUpdated,
         parola: 'Ceva123$' //pt a putea rula (nu se va modifica)
       }
-      await this.post('/Angajat/PostEditareDateAngajat', Angajat)
-      return true
+      let data1 = await this.post('/Angajat/PostEditareDateAngajat', Angajat)
+      if (data1 !== '') {
+        return true
+      } else {
+        return false
+      }
     } catch (Errr) {
       return false
     }
