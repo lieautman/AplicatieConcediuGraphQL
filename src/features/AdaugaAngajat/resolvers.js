@@ -1,7 +1,7 @@
 const adaugaAngajatResolvers = {
   Mutation: {
-    adaugaAngajat: (_, { angajatInput }, { dataSources }) => {
-      return dataSources.adaugaAngajatApi.adaugaAngajat(angajatInput)
+    adaugaAngajat: async (_, { input }, { dataSources }) => {
+      return await dataSources.adaugaAngajatApi.adaugaAngajat(input)
     }
   }
 }

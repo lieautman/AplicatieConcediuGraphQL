@@ -14,7 +14,7 @@ const adaugaAngajatDefs = gql`
     dataAngajarii: String
     esteAngajatCuActeInRegula: Boolean
     managerId: Int
-    echipaId: Int
+    idEchipa: Int
     salariu: Float
   }
 
@@ -26,12 +26,12 @@ const adaugaAngajatDefs = gql`
     parola: String
     dataNasterii: String
     cnp: String
-    serieNumarBuletin: String
-    numardetelefon: String
+    seriaNumarBuletin: String
+    numartelefon: String
     dataAngajarii: String
     esteAngajatCuActeInRegula: Boolean
     managerId: Int
-    echipaId: Int
+    idEchipa: Int
     salariu: Float
   }
   extend type Mutation {
