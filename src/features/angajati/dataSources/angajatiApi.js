@@ -6,7 +6,7 @@ class AngajatiApi extends ApiRESTDataSource {
   }
 
   async angajatiData() {
-    const angajatiData = await this.get('http://localhost:5107/TotiAngajatii/GetTotiAngajatii')
+    const angajatiData = await this.get('/Angajat/GetAllAngajati')
     console.log(angajatiData)
     return angajatiData
   }
