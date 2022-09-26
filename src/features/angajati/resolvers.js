@@ -1,10 +1,11 @@
 const angajatiResolvers = {
   Query: {
     angajatiData: async (_, __, { dataSources }, _info) => {
-      const data = await dataSources.AngajatiApi.angajatiData()
+      const data = await dataSources.angajatiApi.angajatiData()
       const x = data.map(el => ({
         ...el,
-        echipa: el.Echipa.nume
+        manager: el.managerId,
+        echipa: el.idEchipaNavigation.nume
       }))
       return x
     }
