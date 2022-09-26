@@ -4,7 +4,6 @@ const angajatiResolvers = {
       const data = await dataSources.angajatiApi.angajatiData()
       const x = data.map(el => ({
         ...el,
-        manager: el.managerId,
         echipa: el.idEchipaNavigation.nume
       }))
       return x
