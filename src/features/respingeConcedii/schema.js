@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-koa')
 
-const concediuAprobatDefs = gql`
-  type ConcediuAprobat {
+const concediuRespinsDefs = gql`
+  type ConcediuRespins {
     id: Int!
     name: String
     dataInceput: String
@@ -12,8 +12,8 @@ const concediuAprobatDefs = gql`
   }
 
   extend type Mutation {
-    updateConcediu(id: Int!): Int!
+    updateStareConcediu(id: Int!): Int!
   }
 `
 
-module.exports = concediuAprobatDefs
+module.exports = concediuRespinsDefs

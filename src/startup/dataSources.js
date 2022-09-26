@@ -5,6 +5,8 @@ const UserDb = require('../features/user/dataSources/userDb')
 const ProfilePageApi = require('../features/profilePage/dataSourses/profilePageApi')
 const ConcediuAprobatApi = require('../features/aprobaConcedii/dataSources/aprobaConcediiApi')
 const AngajatiApi = require('../features/angajati/dataSources/angajatiApi')
+const adaugaAngajatApi = require('../features/AdaugaAngajat/dataSources/adaugaAngajatApi')
+const ConcediuRespinsApi = require('../features/respingeConcedii/dataSources/respingeConcediiApi')
 
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
@@ -14,7 +16,9 @@ module.exports.getDataSources = () => ({
   concediiApi: new ConcediiApi(),
   concediiSpreAprobareApi: new ConcediiSpreAprobareApi(),
   concediuAprobatApi: new ConcediuAprobatApi(),
-  angajatiApi: new AngajatiApi()
+  concediuRespinsApi: new ConcediuRespinsApi(),
+  angajatiApi: new AngajatiApi(),
+  adaugaAngajatApi: new adaugaAngajatApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -24,7 +28,9 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.ProfilePageApi.initialize({ context })
   dataSources.ConcediiApi.initialize({ context })
   dataSources.ConcediiSpreAprobareApi.initialize({ context })
+  dataSources.adaugaAngajatApi.initialize({ context })
   dataSources.ConcediuAprobatApi.initialize({ context })
+  dataSources.ConcediuRespinsApi.initialize({ context })
   dataSources.AngajatiApi.initialize({ context })
   return dataSources
 }

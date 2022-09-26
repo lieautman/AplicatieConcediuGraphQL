@@ -5,10 +5,8 @@ class ConcediuAprobatApi extends ApiRESTDataSource {
     super()
   }
 
-  async concediuAprobatData() {
-    const concediuAprobatData = await this.post('http://localhost:5107/Concediu/UpdateStareConcediuAprobare?id=${id}')
-    console.log(concediuAprobatData)
-    return concediuAprobatData
+  async concediuAprobatData(id) {
+    await this.post(`http://localhost:5107/Concediu/UpdateStareConcediuAprobare?id=${id}`)
   }
 }
 
