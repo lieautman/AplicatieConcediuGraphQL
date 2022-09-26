@@ -9,6 +9,7 @@ const AngajatiApi = require('../features/angajati/dataSources/angajatiApi')
 const adaugaAngajatApi = require('../features/AdaugaAngajat/dataSources/adaugaAngajatApi')
 const ConcediuRespinsApi = require('../features/respingeConcedii/dataSources/respingeConcediiApi')
 const CardApi = require('../features/cardEchipe/dataSources/cardApi')
+const EchipaApi = require('../features/echipe/dataSources/echipeApi')
 
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
@@ -22,7 +23,8 @@ module.exports.getDataSources = () => ({
   concediuRespinsApi: new ConcediuRespinsApi(),
   angajatiApi: new AngajatiApi(),
   adaugaAngajatApi: new adaugaAngajatApi(),
-  cardApi: new CardApi()
+  cardApi: new CardApi(),
+  echipaApi: new EchipaApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -38,5 +40,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.ConcediuRespinsApi.initialize({ context })
   dataSources.AngajatiApi.initialize({ context })
   dataSources.CardApi.initialize({ context })
+  dataSources.EchipaApi.initialize({ context })
   return dataSources
 }
