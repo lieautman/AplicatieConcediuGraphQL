@@ -6,7 +6,6 @@ const angajatiDefs = gql`
     nume: String
     prenume: String
     email: String
-    manager: String
     echipa: String
   }
 
