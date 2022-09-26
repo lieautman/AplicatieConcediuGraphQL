@@ -5,8 +5,9 @@ class AngajatiPerEchipaApi extends ApiRESTDataSource {
     super()
   }
 
-  async getAngajatiPerEchipaData(echipa) {
-    await this.post(`/Angajat/GetAngajatiPerEchipa?numeEchipa=${echipa}`)
+  async getAngajatiPerEchipaData(idEchipaNavigation) {
+    const data = await this.get(`http://localhost:5107/Angajat/GetAngajatiPerEchipa?numeEchipa=${idEchipaNavigation}`)
+    return data
   }
 }
 

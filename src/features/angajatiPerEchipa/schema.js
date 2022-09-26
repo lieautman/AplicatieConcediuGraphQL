@@ -6,11 +6,11 @@ const angajatiPerEchipaDefs = gql`
     nume: String
     prenume: String
     email: String
-    echipa: String
+    idEchipaNavigation: String
   }
 
   extend type Query {
-    getAngajatiPerEchipaData(echipa: String!): [AngajatiPerEchipa]
+    getAngajatiPerEchipaData(idEchipaNavigation: String): [AngajatiPerEchipa]
   }
 `
 
