@@ -26,7 +26,7 @@ class ProfilePageApi extends ApiRESTDataSource {
       Cnp: userData1.cnp,
       SeriaNumarBuletin: userData1.seriaNumarBuletin,
       Numartelefon: userData1.numartelefon,
-      Poza: '',
+      Poza: userData1.poza,
       Functia: functie,
       ManagerId: userData1.managerId,
       Salariu: userData1.salariu,
