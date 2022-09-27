@@ -14,7 +14,8 @@ const adaugaAngajatDefs = gql`
     esteAngajatCuActeInRegula: Boolean
     managerId: Int
     idEchipa: Int
-    salariu: Float
+    salariu: Numeric
+    esteAdmin: Boolean
   }
 
   input AngajatInput {
@@ -30,7 +31,8 @@ const adaugaAngajatDefs = gql`
     esteAngajatCuActeInRegula: Boolean
     managerId: Int
     idEchipa: Int
-    salariu: Float
+    salariu: Numeric
+    esteAdmin: Boolean
   }
   extend type Mutation {
     adaugaAngajat(input: AngajatInput): Angajat
