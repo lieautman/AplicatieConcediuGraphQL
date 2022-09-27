@@ -10,9 +10,13 @@ const concediiDefs = gql`
     comentarii: String
     angajat: String
   }
+  type ReturnDataConcedii {
+    listaConcedii: [Concedii]
+    numarPagini: Int
+  }
 
   extend type Query {
-    concediiData: [Concedii]!
+    concediiData(index1: Int, index2: Int, nrElemPePagina: Int): ReturnDataConcedii
   }
 `
 
