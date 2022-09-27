@@ -2,7 +2,6 @@ const { gql } = require('apollo-server-koa')
 
 const adaugaAngajatDefs = gql`
   type Angajat {
-    id: Int
     nume: String
     prenume: String
     email: String
@@ -19,7 +18,6 @@ const adaugaAngajatDefs = gql`
   }
 
   input AngajatInput {
-    id: Int
     nume: String
     prenume: String
     email: String
