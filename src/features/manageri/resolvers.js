@@ -4,7 +4,7 @@ const manageriResolvers = {
       const data = await dataSources.manageriApi.manageriData()
       const x = data.map(el => ({
         ...el,
-        manageri: el.nume + el.prenume
+        manageri: el.nume + ' ' + el.prenume
       }))
       return x
     }

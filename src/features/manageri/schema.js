@@ -5,6 +5,7 @@ const manageriDefs = gql`
     id: Int
     nume: String
     prenume: String
+    manageri: String
   }
 
   extend type Query {
