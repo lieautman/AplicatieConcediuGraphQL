@@ -37,6 +37,8 @@ const manageriDefs = require('../features/manageri/schema')
 const manageriResolvers = require('../features/manageri/resolvers')
 const tipConcediuDefs = require('../features/tipConcediu/schema')
 const tipConcediuResolvers = require('../features/tipConcediu/resolvers')
+const zileConcediuDefs = require('../features/nrZileDispConcedii/schema')
+const zileConcediuResolvers = require('../features/nrZileDispConcedii/resolvers')
 const inlocuitoriDefs = require('../features/inlocuitori/schema')
 const inlocuitorResolvers = require('../features/inlocuitori/resolvers')
 
@@ -62,7 +64,8 @@ const resolvers = merge(
   adaugaConcediuResolvers,
   manageriResolvers,
   tipConcediuResolvers,
-  inlocuitorResolvers
+  inlocuitorResolvers,
+  zileConcediuResolvers
 )
 
 const typeDefs = [
@@ -84,6 +87,7 @@ const typeDefs = [
   angajatApiDefs,
   manageriDefs,
   tipConcediuDefs,
+  zileConcediuDefs,
   inlocuitoriDefs
 ]
 
