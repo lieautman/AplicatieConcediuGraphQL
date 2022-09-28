@@ -8,7 +8,7 @@ const manageriDefs = gql`
   }
 
   extend type Query {
-    ManageriData: [Manageri]
+    manageriData: [Manageri]
   }
 `
 module.exports = manageriDefs
