@@ -2,7 +2,11 @@ const manageriResolvers = {
   Query: {
     manageriData: async (_, __, { dataSources }, _info) => {
       const data = await dataSources.manageriApi.manageriData()
-      return data
+      const x = data.map(el => ({
+        ...el,
+        manageri: el.nume + el.prenume
+      }))
+      return x
     }
   }
 }
