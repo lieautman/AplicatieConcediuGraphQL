@@ -80,7 +80,7 @@ class ProfilePageApi extends ApiRESTDataSource {
       }
       let data2 = await this.post('/Angajat/PostIncarcarePoza', Angajat2)
 
-      if (data1 !== '' || data2 !== '') {
+      if (data1 !== '' && data2 !== '') {
         return true
       } else {
         return false

@@ -8,6 +8,7 @@ const adaugaConcediuDefs = gql`
     angajatId: Int
     numarZileDisponibile: Int
     numarZileSelectat: Int
+    inlocuitorId: Int
   }
 
   input ConcediuInput {
@@ -18,6 +19,7 @@ const adaugaConcediuDefs = gql`
     angajatId: Int
     numarZileDisponibile: Int
     numarZileSelectat: Int
+    inlocuitorId: Int
   }
   extend type Mutation {
     adaugaConcediu(input: ConcediuInput): Concediu

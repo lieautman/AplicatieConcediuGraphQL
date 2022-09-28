@@ -33,6 +33,14 @@ const adaugaConcediuResolvers = require('../features/adaugaConcediu/resolvers')
 const adaugaConcediuDefs = require('../features/adaugaConcediu/schema')
 const angajatApiDefs = require('../features/angajatiById/schema')
 const angajatIdResolvers = require('../features/angajatiById/resolvers')
+const manageriDefs = require('../features/manageri/schema')
+const manageriResolvers = require('../features/manageri/resolvers')
+const tipConcediuDefs = require('../features/tipConcediu/schema')
+const tipConcediuResolvers = require('../features/tipConcediu/resolvers')
+const zileConcediuDefs = require('../features/nrZileDispConcedii/schema')
+const zileConcediuResolvers = require('../features/nrZileDispConcedii/resolvers')
+const inlocuitoriDefs = require('../features/inlocuitori/schema')
+const inlocuitorResolvers = require('../features/inlocuitori/resolvers')
 const updateManagerIdEchipaIdResolvers = require('../features/promovare/resolvers')
 const updateManagerIdEchipaIdDefs = require('../features/promovare/schema')
 
@@ -56,6 +64,10 @@ const resolvers = merge(
   cardResolvers,
   echipaResolvers,
   adaugaConcediuResolvers,
+  manageriResolvers,
+  tipConcediuResolvers,
+  inlocuitorResolvers,
+  zileConcediuResolvers,
   updateManagerIdEchipaIdResolvers
 )
 
@@ -76,6 +88,10 @@ const typeDefs = [
   echipaDefs,
   adaugaConcediuDefs,
   angajatApiDefs,
+  manageriDefs,
+  tipConcediuDefs,
+  zileConcediuDefs,
+  inlocuitoriDefs,
   updateManagerIdEchipaIdDefs
 ]
 
