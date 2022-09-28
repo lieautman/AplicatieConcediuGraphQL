@@ -45,7 +45,8 @@ class ProfilePageApi extends ApiRESTDataSource {
     userDataNasteriiUpdated,
     userCnpUpdated,
     seriaNumarBuletinUpdated,
-    salariuUpdated
+    salariuUpdated,
+    pozaUpdated
   ) {
     try {
       let Angajat = {
@@ -62,7 +63,24 @@ class ProfilePageApi extends ApiRESTDataSource {
         parola: 'Ceva123$' //pt a putea rula (nu se va modifica)
       }
       let data1 = await this.post('/Angajat/PostEditareDateAngajat', Angajat)
-      if (data1 !== '') {
+
+      let Angajat2 = {
+        id: userId,
+        nume: userNumeUpdated,
+        prenume: userPrenumeUpdated,
+        email: userEmailUpdated,
+        dataAngajarii: userDataAngajariiUpdated,
+        numartelefon: userNumartelefonUpdated,
+        dataNasterii: userDataNasteriiUpdated,
+        cnp: userCnpUpdated,
+        seriaNumarBuletin: seriaNumarBuletinUpdated,
+        salariu: salariuUpdated,
+        poza: pozaUpdated,
+        parola: 'Ceva123$' //pt a putea rula (nu se va modifica)
+      }
+      let data2 = await this.post('/Angajat/PostIncarcarePoza', Angajat2)
+
+      if (data1 !== '' || data2 !== '') {
         return true
       } else {
         return false

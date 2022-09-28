@@ -18,7 +18,8 @@ const profilePageResolvers = {
         userDataNasteriiUpdated,
         userCnpUpdated,
         seriaNumarBuletinUpdated,
-        salariuUpdated
+        salariuUpdated,
+        pozaUpdated
       },
       { dataSources },
       _info
@@ -33,7 +34,8 @@ const profilePageResolvers = {
         userDataNasteriiUpdated,
         userCnpUpdated,
         seriaNumarBuletinUpdated,
-        salariuUpdated
+        salariuUpdated,
+        pozaUpdated
       )
       return data
     }

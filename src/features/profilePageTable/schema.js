@@ -1,16 +1,22 @@
 const { gql } = require('apollo-server-koa')
 
 const profilePageTableDefs = gql`
-  type Concediu {
-    nume: String
+  type ConcediuPersonal {
+    id: Int
+    tipConcediu: String
+    dataInceput: String
+    dataSfarsit: String
+    numeInlocuitor: String
+    comment: String
+    stareConcediu: String
   }
   type DateIntoarse {
-    listaCOncedii: [Concediu]
+    listaConcedii: [ConcediuPersonal]
     numarPagini: Int
   }
 
   extend type Query {
-    preluareProfilePageTable(userEmail: String, indexStart: Int, indexEnd: Int, numarElemPePagina: Int): String
+    preluareProfilePageTable(userEmail: String, indexStart: Int, indexEnd: Int, numarElemPePagina: Int): DateIntoarse
   }
 `
 
