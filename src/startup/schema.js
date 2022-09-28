@@ -58,7 +58,8 @@ const resolvers = merge(
   cardResolvers,
   echipaResolvers,
   adaugaConcediuResolvers,
-  manageriResolvers
+  manageriResolvers,
+  tipConcediuResolvers
 )
 
 const typeDefs = [
@@ -78,7 +79,8 @@ const typeDefs = [
   echipaDefs,
   adaugaConcediuDefs,
   angajatApiDefs,
-  manageriDefs
+  manageriDefs,
+  tipConcediuDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
