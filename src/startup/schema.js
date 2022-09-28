@@ -35,6 +35,8 @@ const angajatApiDefs = require('../features/angajatiById/schema')
 const angajatIdResolvers = require('../features/angajatiById/resolvers')
 const manageriDefs = require('../features/manageri/schema')
 const manageriResolvers = require('../features/manageri/resolvers')
+const tipConcediuDefs = require('../features/tipConcediu/schema')
+const tipConcediuResolvers = require('../features/tipConcediu/resolvers')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
