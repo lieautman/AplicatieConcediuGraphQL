@@ -7,7 +7,6 @@ class EchipaApi extends ApiRESTDataSource {
 
   async echipaData() {
     const echipaData1 = await this.get('http://localhost:5107/Angajat/GetEchipe')
-    console.log(echipaData1)
     return echipaData1
   }
 }
