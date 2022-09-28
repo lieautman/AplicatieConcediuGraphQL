@@ -33,6 +33,8 @@ const adaugaConcediuResolvers = require('../features/adaugaConcediu/resolvers')
 const adaugaConcediuDefs = require('../features/adaugaConcediu/schema')
 const angajatApiDefs = require('../features/angajatiById/schema')
 const angajatIdResolvers = require('../features/angajatiById/resolvers')
+const manageriDefs = require('../features/manageri/schema')
+const manageriResolvers = require('../features/manageri/resolvers')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
@@ -53,7 +55,8 @@ const resolvers = merge(
   concediuRespinsResolvers,
   cardResolvers,
   echipaResolvers,
-  adaugaConcediuResolvers
+  adaugaConcediuResolvers,
+  manageriResolvers
 )
 
 const typeDefs = [
@@ -72,7 +75,8 @@ const typeDefs = [
   cardDefs,
   echipaDefs,
   adaugaConcediuDefs,
-  angajatApiDefs
+  angajatApiDefs,
+  manageriDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
