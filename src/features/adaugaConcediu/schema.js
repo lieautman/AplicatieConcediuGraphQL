@@ -1,28 +1,16 @@
 const { gql } = require('apollo-server-koa')
 const adaugaConcediuDefs = gql`
-  type Concediu {
-    dataInceput: String
-    dataIncetare: String
-    comentarii: String
-    concediuId: Int
-    angajatId: Int
-    numarZileDisponibile: Int
-    numarZileSelectat: Int
-    inlocuitorId: Int
-  }
-
   input ConcediuInput {
+    tipConcediuId: Int
     dataInceput: String
-    dataIncetare: String
-    comentarii: String
-    concediuId: Int
-    angajatId: Int
-    numarZileDisponibile: Int
-    numarZileSelectat: Int
+    dataSfarsit: String
     inlocuitorId: Int
+    comentarii: String
+    stareConcediuId: Int
+    angajatId: Int
   }
   extend type Mutation {
-    adaugaConcediu(input: ConcediuInput): Concediu
+    adaugaConcediu(input: ConcediuInput): String
   }
 `
 module.exports = adaugaConcediuDefs
