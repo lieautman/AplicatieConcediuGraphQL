@@ -2,6 +2,7 @@ const { gql } = require('apollo-server-koa')
 
 const inlocuitoriDefs = gql`
   type Inlocuitor {
+    id: Int
     nume: String
     prenume: String
     inlocuitor: String

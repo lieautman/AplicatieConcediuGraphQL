@@ -7,7 +7,11 @@ class adaugaConcediuApi extends ApiRESTDataSource {
   }
   async adaugaConcediu(Concediu) {
     const data = await this.post('/CreareConcediu/PostConcediu', Concediu)
-    return data
+    if (data !== '') {
+      return 'Inregistrare efectuata!'
+    } else {
+      return 'Eroare de server!'
+    }
   }
 }
 
