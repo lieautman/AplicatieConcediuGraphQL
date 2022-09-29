@@ -7,7 +7,6 @@ class TipConcediuApi extends ApiRESTDataSource {
 
   async tipConcediuData() {
     const tipConcediuData1 = await this.get('http://localhost:5107/CreareConcediu/TipuriConcediu')
-    console.log(tipConcediuData1)
     return tipConcediuData1
   }
 }
