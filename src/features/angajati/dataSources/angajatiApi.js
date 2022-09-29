@@ -10,6 +10,10 @@ class AngajatiApi extends ApiRESTDataSource {
     console.log(angajatiData)
     return angajatiData
   }
+  async angajatiDeFormatEchipaData(id) {
+    const angajatiDeFormatEchipaData = await this.get(`/Angajat/GetAllAngajatiDeFormatEchipa/${id}`)
+    return angajatiDeFormatEchipaData
+  }
 }
 
 module.exports = AngajatiApi

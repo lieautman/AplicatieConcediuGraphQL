@@ -11,6 +11,7 @@ const angajatiDefs = gql`
 
   extend type Query {
     angajatiData: [Angajati]!
+    angajatiDeFormatEchipaData(id: Int): [Angajati]!
   }
 `
 
