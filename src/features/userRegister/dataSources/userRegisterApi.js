@@ -13,7 +13,8 @@ class UserRegisterApi extends ApiRESTDataSource {
     userDataNasterii,
     userCnp,
     userSeriaNumarBuletin,
-    userParola
+    userParola,
+    userParola2
   ) {
     try {
       let Angajat = {
@@ -24,7 +25,8 @@ class UserRegisterApi extends ApiRESTDataSource {
         dataNasterii: userDataNasterii,
         cnp: userCnp,
         seriaNumarBuletin: userSeriaNumarBuletin,
-        parola: userParola
+        parola: userParola,
+        parola2: userParola2
       }
 
       {
@@ -36,11 +38,16 @@ class UserRegisterApi extends ApiRESTDataSource {
         let cnp = userCnp
         let SerieNrBuletin = userSeriaNumarBuletin
         let parola = userParola
+        let parola2 = userParola2
         let email = userEmail
 
         //validari
         //completare campuri
         if (!isError) {
+          if (parola !== parola2) {
+            isError = true
+            return 'Parolele nu se potrivesc!'
+          }
           if (nume === '') {
             isError = true
             return 'Nume gol!'

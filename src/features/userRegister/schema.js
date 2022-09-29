@@ -11,6 +11,7 @@ const userRegisterDefs = gql`
       userCnp: String
       userSeriaNumarBuletin: String
       userParola: String
+      userParola2: String
     ): String
   }
 `
