@@ -205,24 +205,29 @@ class UserRegisterApi extends ApiRESTDataSource {
           let reTelefon = new RegExp('^[0-9]*$').ignoreCase
           if (!reTelefon.test(nr_telefon)) {
             isError = true
+            return 'Telefon gresit!'
           }
           let reCnp = new RegExp('^[0-9]*$').ignoreCase
           if (!reCnp.test(cnp)) {
             isError = true
+            return 'Cnp gresit!'
           }
           //validare email
           let reEmail = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$').ignoreCase
           if (!reEmail.test(email)) {
             isError = true
+            return 'Email gresit!'
           }
           //validare parola
           let reParola = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$').ignoreCase
           if (!reParola.test(parola)) {
             isError = true
+            return 'Parola gresit!'
           }
           //data nastere in viitor
           if (data_nastere > Date.now()) {
             isError = true
+            return 'Data nastere in viitor!'
           }
         }
       }
