@@ -43,6 +43,8 @@ const inlocuitoriDefs = require('../features/inlocuitori/schema')
 const inlocuitorResolvers = require('../features/inlocuitori/resolvers')
 const updateManagerIdEchipaIdResolvers = require('../features/promovare/resolvers')
 const updateManagerIdEchipaIdDefs = require('../features/promovare/schema')
+const creareConcediuResolvers = require('../features/creareConcediu/resolvers')
+const creareConcediuDefs = require('../features/creareConcediu/schema')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
@@ -68,7 +70,8 @@ const resolvers = merge(
   tipConcediuResolvers,
   inlocuitorResolvers,
   zileConcediuResolvers,
-  updateManagerIdEchipaIdResolvers
+  updateManagerIdEchipaIdResolvers,
+  creareConcediuResolvers
 )
 
 const typeDefs = [
@@ -92,7 +95,8 @@ const typeDefs = [
   tipConcediuDefs,
   zileConcediuDefs,
   inlocuitoriDefs,
-  updateManagerIdEchipaIdDefs
+  updateManagerIdEchipaIdDefs,
+  creareConcediuDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })

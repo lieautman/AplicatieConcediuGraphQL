@@ -6,8 +6,12 @@ class adaugaAngajatApi extends ApiRESTDataSource {
     super()
   }
   async adaugaAngajat(input) {
-    const data = await this.post('/AdaugareAngajatNou/PostAdaugareAngajatNou', { ...input })
-    return data
+    try {
+      const data = await this.post('/AdaugareAngajatNou/PostAdaugareAngajatNou', { ...input })
+      return data
+    } catch {
+      return 'Eroare de server!'
+    }
   }
 }
 
