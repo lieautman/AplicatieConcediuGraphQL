@@ -13,7 +13,8 @@ class UserRegisterApi extends ApiRESTDataSource {
     userDataNasterii,
     userCnp,
     userSeriaNumarBuletin,
-    userParola
+    userParola,
+    userParola2
   ) {
     try {
       let Angajat = {
@@ -24,7 +25,8 @@ class UserRegisterApi extends ApiRESTDataSource {
         dataNasterii: userDataNasterii,
         cnp: userCnp,
         seriaNumarBuletin: userSeriaNumarBuletin,
-        parola: userParola
+        parola: userParola,
+        parola2: userParola2
       }
 
       {
@@ -36,18 +38,23 @@ class UserRegisterApi extends ApiRESTDataSource {
         let cnp = userCnp
         let SerieNrBuletin = userSeriaNumarBuletin
         let parola = userParola
+        let parola2 = userParola2
         let email = userEmail
 
         //validari
         //completare campuri
         if (!isError) {
+          if (parola !== parola2) {
+            isError = true
+            return 'Parolele nu se potrivesc!'
+          }
           if (nume === '') {
             isError = true
             return 'Nume gol!'
           }
           if (prenume === '') {
             isError = true
-            return 'Prenume goala!'
+            return 'Prenume gol!'
           }
           if (nr_telefon === '') {
             isError = true
@@ -71,7 +78,7 @@ class UserRegisterApi extends ApiRESTDataSource {
           }
         } //empty sring
         if (!isError) {
-          if (nume === null && nume === undefined) {
+          if (nume === null || nume === undefined) {
             isError = true
             return 'Nume gol!'
           }
@@ -173,56 +180,58 @@ class UserRegisterApi extends ApiRESTDataSource {
 
         //verificare validitate date campuri
         if (!isError) {
-          //cnp si data nasterii corespund
-          {
-            //cnp si data nasterii corespund
-            {
-              let cnpDataNastere = cnp.Substring(1, 6)
-              let dataNastereFormatataString = data_nastere.ToString()
-              let index = dataNastereFormatataString.IndexOf('/', dataNastereFormatataString.IndexOf('/') + 1)
-              let luna = dataNastereFormatataString.Substring(0, dataNastereFormatataString.IndexOf('/'))
-              let zi = dataNastereFormatataString.Substring(
-                dataNastereFormatataString.IndexOf('/') + 1,
-                index - dataNastereFormatataString.IndexOf('/') - 1
-              )
-              let an = dataNastereFormatataString.Substring(
-                index + 1 + 2,
-                dataNastereFormatataString.IndexOf(' ') - index - 3
-              )
-
-              if (zi.Length == 1) {
-                zi = '0' + zi
-              }
-              if (luna.Length == 1) {
-                luna = '0' + luna
-              }
-
-              if (cnpDataNastere != an + luna + zi) {
-                isError = true
-              }
-            }
-          }
-          let reTelefon = new RegExp('^[0-9]*$').ignoreCase
+          let reTelefon = new RegExp('^[0-9]*$')
+          reTelefon.ignoreCase
           if (!reTelefon.test(nr_telefon)) {
             isError = true
+            return 'Telefon gresit!'
           }
-          let reCnp = new RegExp('^[0-9]*$').ignoreCase
+          let reCnp = new RegExp('^[0-9]*$')
+          reCnp.ignoreCase
           if (!reCnp.test(cnp)) {
             isError = true
+            return 'Cnp gresit!'
           }
           //validare email
-          let reEmail = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$').ignoreCase
+          let reEmail = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')
+          reEmail.ignoreCase
           if (!reEmail.test(email)) {
             isError = true
+            return 'Email gresit!'
           }
           //validare parola
-          let reParola = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$').ignoreCase
+          let reParola = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+          reParola.ignoreCase
           if (!reParola.test(parola)) {
             isError = true
+            return 'Parola gresit!'
           }
           //data nastere in viitor
-          if (data_nastere > Date.now()) {
+          if (new Date(data_nastere).getTime() > Date.now()) {
             isError = true
+            return 'Data nastere in viitor!'
+          }
+
+          //cnp si data nasterii corespund
+          {
+            let cnpDataNastere = cnp.substring(1, 7)
+            let dataNastereFormatataString = data_nastere.toString()
+            let index = dataNastereFormatataString.indexOf('-', dataNastereFormatataString.indexOf('-') + 1)
+            let an = dataNastereFormatataString.substring(2, dataNastereFormatataString.indexOf('-'))
+            let luna = dataNastereFormatataString.substring(index - 2, index)
+            let zi = dataNastereFormatataString.substring(index + 1, dataNastereFormatataString.length)
+
+            if (zi.Length == 1) {
+              zi = '0' + zi
+            }
+            if (luna.Length == 1) {
+              luna = '0' + luna
+            }
+
+            if (cnpDataNastere != an.toString() + luna.toString() + zi.toString()) {
+              isError = true
+              return 'Cnp diferit de data nasterii!'
+            }
           }
         }
       }

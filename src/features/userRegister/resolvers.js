@@ -2,7 +2,17 @@ const userRegisterResolvers = {
   Mutation: {
     registerUser: async (
       _,
-      { userNume, userPrenume, userEmail, userNumartelefon, userDataNasterii, userCnp, userSeriaNumarBuletin, userParola },
+      {
+        userNume,
+        userPrenume,
+        userEmail,
+        userNumartelefon,
+        userDataNasterii,
+        userCnp,
+        userSeriaNumarBuletin,
+        userParola,
+        userParola2
+      },
       { dataSources },
       _info
     ) => {
@@ -14,7 +24,8 @@ const userRegisterResolvers = {
         userDataNasterii,
         userCnp,
         userSeriaNumarBuletin,
-        userParola
+        userParola,
+        userParola2
       )
       return data
     }

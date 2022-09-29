@@ -37,7 +37,7 @@ const profilePageDefs = gql`
       seriaNumarBuletinUpdated: String
       salariuUpdated: String
       pozaUpdated: String
-    ): Boolean!
+    ): String
   }
 `
 
