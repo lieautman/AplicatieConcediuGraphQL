@@ -14,7 +14,7 @@ const updateManagerIdEchipaIdDefs = gql`
     prenume: String
     email: String
     cnp: String
-    echipa: Int
+    IdEchipa: Int
     ManagerId: Int
   }
   extend type Mutation {
