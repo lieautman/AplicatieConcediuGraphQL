@@ -81,12 +81,12 @@ class ProfilePageApi extends ApiRESTDataSource {
       let data2 = await this.post('/Angajat/PostIncarcarePoza', Angajat2)
 
       if (data1 !== '' && data2 !== '') {
-        return true
+        return 'Inregistrare efectuata!'
       } else {
-        return false
+        return 'Eroare de server!'
       }
-    } catch (Errr) {
-      return false
+    } catch {
+      return 'Eroare de server!'
     }
   }
 }
